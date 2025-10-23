@@ -8,9 +8,17 @@
 <body>
     <div id="status">
     <h1>Controlleur Exodus</h1>
+    <div class="controlleur">
     <div class="boutonsControlleur">
+        <h1>Bras Gauche</h1>
     <button class="Allumer ButDebuter" href="/on">Allumer</button>
     <button class="Eteindre ButDebuter" href="/off">Eteindre</button>
+    </div>
+    <div class="boutonsControlleur">
+        <h1>Bras Droit</h1>
+    <button class="Allumer ButDebuter" href="/on">Allumer</button>
+    <button class="Eteindre ButDebuter" href="/off">Eteindre</button>
+    </div>
     </div>
 </div>
 </body>
@@ -24,6 +32,14 @@ document.getElementsByClassName("Eteindre")[0].onclick = function() {
 };
 </script>
 <style>
+
+.controlleur{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap : 50px;
+}
+
 #status {
     color: rgb(240, 232, 232);
     margin: auto;

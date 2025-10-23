@@ -33,7 +33,6 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
 
-  // Start ESP32 in AP mode
   WiFi.softAP(ssid, password);
   Serial.print("Nom du réseau: ");
   Serial.println(ssid); // impression du nom du réseau
