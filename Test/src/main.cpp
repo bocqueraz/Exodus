@@ -2,8 +2,8 @@
 #include <WebServer.h>
 #include "index.h"
 
-#ifndef LED_BUILTIN
-#define LED_BUILTIN 2 // pin de la LED intégrée pour ESP32
+#ifndef LED
+#define LED 2 // pin de la LED intégrée pour ESP32
 #endif
 
 const char *ssid = "Exodus";       // Nom du réseau Wi-Fi
@@ -18,19 +18,19 @@ void handleRoot()
 
 void handleOn()
 {
-  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(LED, HIGH);
   server.send(200, "text/html", htmlOn); // page après allumage
 }
 
 void handleOff()
 {
-  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(LED, LOW);
   server.send(200, "text/html", htmlOff); // page après extinction
 }
 
 void setup()
 {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED, OUTPUT);
   Serial.begin(9600);
 
   WiFi.softAP(ssid, password);

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- En-tête de la page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="titre">Controlleur Exodus</title>
 </head>
-<body>
+<body> <!-- Corps de la page -->
     <div id="status">
-    <h1>Controlleur Exodus</h1>
+    <h1>Controlleur Exodus</h1> <!-- Titre de la page -->
     <div class="controlleur">
-    <div class="boutonsControlleur">
+    <div class="boutonsControlleur"> <!--Boite de contrôle pour le bras gauche-->
         <h1>Bras Gauche</h1>
     <button class="Allumer ButDebuter" href="/on">Allumer</button>
     <button class="Eteindre ButDebuter" href="/off">Eteindre</button>
     </div>
-    <div class="boutonsControlleur">
+    <div class="boutonsControlleur"> <!--Boite de contrôle pour le bras droit-->
         <h1>Bras Droit</h1>
     <button class="Allumer ButDebuter" href="/on">Allumer</button>
     <button class="Eteindre ButDebuter" href="/off">Eteindre</button>
@@ -24,14 +24,16 @@
 </body>
 </html>
 <script>
-document.getElementsByClassName("Allumer")[0].onclick = function() {
+document.getElementsByClassName("Allumer")[0].onclick = function() { // envoie sur la page /on ce qui allume la LED
     window.location.href = this.getAttribute("href");
 };
-document.getElementsByClassName("Eteindre")[0].onclick = function() {
+document.getElementsByClassName("Eteindre")[0].onclick = function() { // envoie sur la page /off ce qui éteint la LED
     window.location.href = this.getAttribute("href");
 };
 </script>
-<style>
+
+
+<style> /* Style de la page */
 
 .controlleur{
     display: flex;
