@@ -16,17 +16,17 @@ void handleRoot()
   server.send(200, "text/html", htmlIndex); // page d'accueil
 }
 
-void handleOn()
-{
-  digitalWrite(LED, HIGH);
-  server.send(200, "text/html", htmlOn); // page après allumage
-}
+// void handleOn()
+// {
+//   digitalWrite(LED, HIGH);
+//   server.send(200, "text/html", htmlOn); // page après allumage
+// }
 
-void handleOff()
-{
-  digitalWrite(LED, LOW);
-  server.send(200, "text/html", htmlOff); // page après extinction
-}
+// void handleOff()
+// {
+//   digitalWrite(LED, LOW);
+//   server.send(200, "text/html", htmlOff); // page après extinction
+// }
 
 void setup()
 {
@@ -40,9 +40,9 @@ void setup()
   Serial.println(WiFi.softAPIP()); // impression de l'adresse IP du site
 
   // Configuration du routeur web
-  server.on("/", handleRoot);   // page d'accueil
-  server.on("/on", handleOn);   // page après allumage
-  server.on("/off", handleOff); // page après extinction
+  server.on("/", handleRoot); // page d'accueil
+  // server.on("/on", handleOn);   // page après allumage
+  // server.on("/off", handleOff); // page après extinction
   server.begin();
   Serial.println("Site Internet démarré");
 }
