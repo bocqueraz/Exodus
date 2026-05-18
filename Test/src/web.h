@@ -1,14 +1,25 @@
-// ce fichier contient les pages HTML stockées en mémoire flash pour économiser la RAM
+// ce fichier contient les pages HTML stockées en mémoire flash pour économiser la RAM ainsi que l'ensemble des définitions de la classe Web
 // Ajout possible: graphique du poids porté par l'exosquellette sur chaque bras, ainsi que le niveau de charge, le temps de fonctionnement restant, etc... avec chart.js
 
 // https://www.w3schools.com/js/js_graphics.asp
 
-#ifndef PAGES_H
-#define PAGES_H
+#include <WebServer.h>
 
-#include <pgmspace.h>
+class Web {
+    public :
+        Web(const char *ssid, const char *password);
+        static void tacheServeurWebStatic(void *parameter);
 
-const char htmlIndex[] PROGMEM = R"rawliteral(
+    private :
+        WebServer server;
+        const char *_ssid;
+        const char *_password;
+        void _handleRoot();
+        void tacheServeurWeb();
+
+};
+
+const char _htmlIndex[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -247,5 +258,3 @@ const char htmlIndex[] PROGMEM = R"rawliteral(
 </body>
 </html>
 )rawliteral";
-
-#endif
