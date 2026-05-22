@@ -26,6 +26,13 @@ void setup()
 
   #pragma endregion
 
+  #pragma region lancement du système de fichiers LittleFS
+  if(!LITTLEFS.begin()){
+    Logger::Log("Erreur lors de l'initialisation de LittleFS");
+    return;
+  }
+  #pragma endregion
+
   #pragma region lancement communication VESC
   Serial2.begin(115200, SERIAL_8N1, RXD2, TXD2); // UART VESC (baudrate par défaut VESC)
   vesc.setSerialPort(&Serial2); // port de communication des VESC

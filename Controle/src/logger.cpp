@@ -4,11 +4,11 @@
 
 std::atomic_flag Logger::disponible = ATOMIC_FLAG_INIT; // token pour éviter que les messages de log de différents cores s'entremêlent et deviennent illisibles
 
-void Logger::Log(String message)
+void Logger::Log(const String &message)
 {
   while (disponible.test_and_set()) // essaye de prendre le token, si il est déjà pris, attend et réessaie
   {
-    yield(); 
+    yield();
   }
 
   int coreID = xPortGetCoreID(); // récupère l'id du core
