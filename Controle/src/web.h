@@ -16,6 +16,8 @@ class Web {
         WebServer server;
         const char *_ssid;
         const char *_password;
+        String getFileType(String filename);
+        String InitialisationRoute(File path, String impression = "Contenu du système de fichiers:\n");
         void tacheServeurWeb();
 
 };
