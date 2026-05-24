@@ -1,6 +1,6 @@
 #include "main.h"
 
-Web web(ssid, password);
+Web web();
 
 void setup()
 {
@@ -10,27 +10,18 @@ void setup()
   Serial.println("Démarrage du système...");
   
   #pragma region lancement du site
+  // Execute la tache sur le core 0
+  xTaskCreatePinnedToCore(
+    Web::tacheServeurWebStatic, // fonction (static wrapper)
+    "ServeurWeb",    // nom
+    10000,           // taille de la pile (bytes)
+    &web,            // paramètres: pointer to the global instance
+    1,               // priorité
+    NULL,            // task handle (not used)
+    0                // core
+  );
+  Logger::Log("Tâche Web lancée sur Core 0.");
 
-    // Execute la tache sur le core 0
-    xTaskCreatePinnedToCore(
-      Web::tacheServeurWebStatic, // fonction (static wrapper)
-      "ServeurWeb",    // nom
-      10000,           // taille de la pile (bytes)
-      &web,            // paramètres: pointer to the global instance
-      1,               // priorité
-      NULL,            // task handle (not used)
-      0                // core
-    );
-
-    Logger::Log("Tâche Web lancée sur Core 0.");
-
-  #pragma endregion
-
-  #pragma region lancement du système de fichiers LittleFS
-  if(!LITTLEFS.begin()){
-    Logger::Log("Erreur lors de l'initialisation de LittleFS");
-    return;
-  }
   #pragma endregion
 
   #pragma region lancement communication VESC

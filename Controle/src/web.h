@@ -3,19 +3,22 @@
 
 // https://www.w3schools.com/js/js_graphics.asp
 
+#pragma once
+
 #include "logger.h"
 #include <WebServer.h>
 #include <LittleFS.h>
+#include "config.h"
 
 class Web {
     public :
-        Web(const char *ssid, const char *password);
-        static void tacheServeurWebStatic(void *parameter);
+        Web();
+        static void tacheServeurWebStatic(void* parameter);
 
     private :
         WebServer server;
-        const char *_ssid;
-        const char *_password;
+        const char* _ssid = ssid;
+        const char* _password = password;
         void tacheServeurWeb();
 
 };

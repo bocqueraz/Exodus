@@ -4,14 +4,11 @@
 
 #pragma region Tâche du Serveur Web en mode Point Accès (AP) | sur core 0
 
-Web::Web(const char *ssid, const char *password) : server(80) {
-    this->_ssid = ssid;
-    this->_password = password;
-}
+Web::Web() : server(80) {}
 
-void Web::tacheServeurWebStatic(void *parameter)
+void Web::tacheServeurWebStatic(void* parameter)
 {
-  Web *instance = static_cast<Web *>(parameter);
+  Web* instance = static_cast<Web* >(parameter);
   if (instance)
   {
     instance->tacheServeurWeb();
