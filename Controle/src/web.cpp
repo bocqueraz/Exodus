@@ -8,7 +8,7 @@ Web::Web() : server(80) {}
 
 void Web::tacheServeurWebStatic(void* parameter)
 {
-  Web* instance = static_cast<Web* >(parameter);
+  Web* instance = static_cast<Web *>(parameter);
   if (instance)
   {
     instance->tacheServeurWeb();

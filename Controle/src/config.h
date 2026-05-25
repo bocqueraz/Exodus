@@ -1,22 +1,16 @@
-#include <WiFi.h>
-#pragma region Paramètres Exodus
-bool mode_libre = false; // par défaut en mode libre
-int sensibilite = 2000; // sensibilité des capteurs de force
-int degmin = 10; // degré minimum de la position du moteur
-int degmax = 100; // degré maximum de la position du moteur
+//à modifier pour éviter de répéter la définition des pins dans config.cpp et config.h, jsp comment
+
+#pragma once
+#pragma region Paramètres Controle des capteurs et moteurs
+extern bool mode_libre; // par défaut en mode libre
+extern const int sensibilite_capteur_force; // sensibilité des capteurs de force
+extern const int degmin_moteur; // degré minimum de la position du moteur
+extern const int degmax_moteur; // degré maximum de la position du moteur
+extern const int RPM_AVANT_moteur;
+extern const int RPM_ARRIERE_moteur;
 #pragma endregion
 
-#pragma region VESC
-const int RPM_AVANT = 2000;
-const int RPM_ARRIERE = -2000;
+#pragma region Paramètres du WiFi
+extern const char* ssid;       // Nom du réseau Wi-Fi
+extern const char* password; // Mot de passe du réseau Wi-Fi
 #pragma endregion
-
-#pragma region WiFi
-const char *ssid = "Exodus";       // Nom du réseau Wi-Fi
-const char *password = "Exodus25"; // Mot de passe du réseau Wi-Fi
-#pragma endregion
-
-  #pragma region definition variables drivers VESC
-  #define RXD2 16 // pins pour la communication avec les VESCs
-  #define TXD2 17 
-  #pragma endregion
