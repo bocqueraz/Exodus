@@ -2,14 +2,11 @@
 #include "pin.h"
 
 #pragma region definition des pins des capteurs de pression
-const int CP1 = 34; //definition des pins des capteurs de force/pression
-const int CP2 = 3;
-const int CP3 = 5;
-const int CP4 = 7;
-// const int CP5 = 8;
-// const int CP6 = 9;
-// const int CP7 = 10;
-// const int CP8 = 11;
+const int PIN_PRESSION_BRAS_DROIT_DROIT = 34; // Pin pour le capteur de pression du coude droit
+const int PIN_PRESSION_BRAS_DROIT_GAUCHE = 35; // Pin pour le capteur de pression du coude gauche
+const int PIN_PRESSION_BRAS_DROIT_HAUT = 32; // Pin pour le capteur de pression de l'épaule droite
+const int PIN_PRESSION_BRAS_DROIT_BAS = 33; // Pin pour le capteur de pression de l'épaule gauche
+
 #pragma endregion
 
 #pragma region definition variables drivers VESC

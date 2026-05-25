@@ -2,14 +2,10 @@
 
 #pragma once
 #pragma region definition des pins des capteurs de pression
-extern const int CP1;
-extern const int CP2;
-extern const int CP3;
-extern const int CP4;
-// const int CP5;
-// const int CP6;
-// const int CP7;
-// const int CP8;
+extern const int PIN_PRESSION_BRAS_DROIT_DROIT; // Pin pour le capteur de pression du coude droit
+extern const int PIN_PRESSION_BRAS_DROIT_GAUCHE; // Pin pour le capteur de pression du coude gauche
+extern const int PIN_PRESSION_BRAS_DROIT_HAUT; // Pin pour le capteur de pression de l'épaule droite
+extern const int PIN_PRESSION_BRAS_DROIT_BAS; // Pin pour le capteur de pression de l'épaule gauche
 #pragma endregion
 
 #pragma region definition variables drivers VESC
