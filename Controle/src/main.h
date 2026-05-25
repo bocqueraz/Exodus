@@ -1,4 +1,3 @@
-#include "VescUart.h"
 #include "config.h"
 #include "pin.h"
 #include "logger.h"
@@ -6,4 +5,3 @@
 #include "moteur.h"
 #include "pression.h"
 #include <LittleFS.h>
-#include <WiFi.h>
