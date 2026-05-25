@@ -4,13 +4,13 @@ Pression::Pression(int pin) : _pin(pin) {
     pinMode(_pin, INPUT);
 }
 
-int Pression::capteurDetecte() {
+bool Pression::capteurDetecte() {
     int valeur = ValeurCapteur();
     Logger::Log("Valeur du capteur de pression sur pin " + String(_pin) + ": " + String(valeur));
     if (valeur > _sensibilite_capteur_force) {
-        return 1; // Pression détectée
+        return true; // Pression détectée
     } else {
-        return 0; // Pas de pression
+        return false; // Pas de pression
     }
 }
 

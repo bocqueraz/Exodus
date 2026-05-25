@@ -6,7 +6,7 @@
 class Pression {
     public:
         Pression(int pin);
-        int capteurDetecte();
+        bool capteurDetecte();
 
     private:
         const int _pin;
