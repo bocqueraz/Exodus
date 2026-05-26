@@ -6,10 +6,10 @@ Pression PressionBrasDroitDroit = Pression(PIN_PRESSION_BRAS_DROIT_DROIT);
 Pression PressionBrasDroitGauche = Pression(PIN_PRESSION_BRAS_DROIT_GAUCHE);
 Pression PressionBrasDroitHaut = Pression(PIN_PRESSION_BRAS_DROIT_HAUT);
 Pression PressionBrasDroitBas = Pression(PIN_PRESSION_BRAS_DROIT_BAS);
-MoteurBrushless MoteurCoudeDroit = MoteurBrushless(CAN_ID_MOTEUR_COUDE_DROIT);
-MoteurBrushless MoteurCoudeGauche = MoteurBrushless(CAN_ID_MOTEUR_COUDE_GAUCHE);
-MoteurBrushless MoteurEpauleDroit = MoteurBrushless(CAN_ID_MOTEUR_EPAULE_DROIT);
-MoteurBrushless MoteurEpauleGauche = MoteurBrushless(CAN_ID_MOTEUR_EPAULE_GAUCHE);
+MoteurBrushless MoteurCoudeDroit = MoteurBrushless(can_id_moteur_coude_droit);
+MoteurBrushless MoteurCoudeGauche = MoteurBrushless(can_id_moteur_coude_gauche);
+MoteurBrushless MoteurEpauleDroit = MoteurBrushless(can_id_moteur_epaule_droit);
+MoteurBrushless MoteurEpauleGauche = MoteurBrushless(can_id_moteur_epaule_gauche);
 #pragma endregion
 
 bool modeLibre = true;

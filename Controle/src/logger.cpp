@@ -1,4 +1,4 @@
-//permet de faire du logging en affichant l'id du core qui affiche le message
+//Fichier qui permet de faire du logging en affichant l'id du core qui affiche le message, pour faciliter le débuggage, vu qu'on utilise les deux cores de l'ESP32 pour faire tourner le projet.
 
 #include "logger.h"
 
@@ -11,7 +11,7 @@ void Logger::Log(const String &message)
     yield();
   }
 
-  int coreID = xPortGetCoreID(); // récupère l'id du core
+  int coreID = xPortGetCoreID(); // récupère l'id du core sur lequel l'action est effectuée
 
   Serial.print("[Core ");
   Serial.print(coreID);

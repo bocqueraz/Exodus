@@ -1,4 +1,6 @@
-//à modifier pour éviter de répéter la définition des pins dans config.cpp et config.h, jsp comment
+//TODO: Modifier pour éviter de répéter la définition des pins dans config.cpp et config.h, jsp comment
+
+//Fichier de configuration pour la définition des constantes utilisées dans le projet.
 
 #include "config.h"
 
@@ -19,8 +21,8 @@ const char* password = "Exodus25"; // Mot de passe du réseau Wi-Fi
 #pragma endregion
 
 #pragma region CAN ID moteur Brushless
-const int CAN_ID_MOTEUR_COUDE_DROIT = 0; // ID pour le moteur du coude droit
-const int CAN_ID_MOTEUR_COUDE_GAUCHE = 1; // ID pour le moteur du coude gauche
-const int CAN_ID_MOTEUR_EPAULE_DROIT = 2; // ID pour le moteur de l'épaule droite
-const int CAN_ID_MOTEUR_EPAULE_GAUCHE = 3; // ID pour le moteur de l'épaule gauche
+const int can_id_moteur_coude_droit = 0; // ID pour le moteur du coude droit
+const int can_id_moteur_coude_gauche = 1; // ID pour le moteur du coude gauche
+const int can_id_moteur_epaule_droit = 2; // ID pour le moteur de l'épaule droite
+const int can_id_moteur_epaule_gauche = 3; // ID pour le moteur de l'épaule gauche
 #pragma endregion

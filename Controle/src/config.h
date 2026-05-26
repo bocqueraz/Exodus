@@ -1,4 +1,7 @@
-//à modifier pour éviter de répéter la définition des pins dans config.cpp et config.h, jsp comment
+//TODO: Modifier pour éviter de répéter la définition des pins dans config.cpp et config.h, jsp comment
+
+//Fichier de configuration pour la déclaration des constantes utilisées dans le projet.
+//Convention : toutes les constantes dans ce fichier sont écrites en minuscules 
 
 #pragma once
 #pragma region Paramètres Controle des capteurs et moteurs
@@ -18,8 +21,8 @@ extern const char* password; // Mot de passe du réseau Wi-Fi
 #pragma endregion
 
 #pragma region CAN ID moteur Brushless
-extern const int CAN_ID_MOTEUR_COUDE_DROIT; // ID pour le moteur du coude droit
-extern const int CAN_ID_MOTEUR_COUDE_GAUCHE; // ID pour le moteur du coude gauche
-extern const int CAN_ID_MOTEUR_EPAULE_DROIT; // ID pour le moteur de l'épaule droite
-extern const int CAN_ID_MOTEUR_EPAULE_GAUCHE; // ID pour le moteur de l'épaule gauche
+extern const int can_id_moteur_coude_droit; // ID pour le moteur du coude droit
+extern const int can_id_moteur_coude_gauche; // ID pour le moteur du coude gauche
+extern const int can_id_moteur_epaule_droit; // ID pour le moteur de l'épaule droite
+extern const int can_id_moteur_epaule_gauche; // ID pour le moteur de l'épaule gauche
 #pragma endregion

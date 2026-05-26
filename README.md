@@ -35,4 +35,4 @@ Pour aller plus loin
 
 Consultez `Controle/controle/README` pour les explications et détails du système embarqué sur le sous-projet `Controle`.
 
-Consultez `Controle/TestComposant/MT6701` pour les tests, les contraintes de validation et les informations détaillées sur les différents composants utilisés.
+Consultez `Controle/TestComposant/MT6701` pour les tests et les informations détaillées sur les différents composants utilisés.
