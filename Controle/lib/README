@@ -1,46 +1,32 @@
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into the executable file.
+# Bibliothèques locales du projet Controle
 
-The source code of each library should be placed in a separate directory
-("lib/your_library_name/[Code]").
+Ce dossier regroupe les bibliothèques embarquées localement avec le projet PlatformIO.
 
-For example, see the structure of the following example libraries `Foo` and `Bar`:
+## Bibliothèques présentes
 
-|--lib
-|  |
-|  |--Bar
-|  |  |--docs
-|  |  |--examples
-|  |  |--src
-|  |     |- Bar.c
-|  |     |- Bar.h
-|  |  |- library.json (optional. for custom build options, etc) https://docs.platformio.org/page/librarymanager/config.html
-|  |
-|  |--Foo
-|  |  |- Foo.c
-|  |  |- Foo.h
-|  |
-|  |- README --> THIS FILE
-|
-|- platformio.ini
-|--src
-   |- main.c
+### `LittleFS_esp32`
 
-Example contents of `src/main.c` using Foo and Bar:
-```
-#include <Foo.h>
-#include <Bar.h>
+Cette bibliothèque fournit l'intégration de LittleFS pour l'ESP32.
+Elle sert de couche d'accès au système de fichiers flash utilisé par le projet pour le moment uniquement pour stocker les fichiers web.
 
-int main (void)
-{
-  ...
-}
+Cette copie locale reprend la base de la bibliothèque publiée, mais elle comprend quelques correctifs de bugs.
 
-```
+### `VescUart`
 
-The PlatformIO Library Dependency Finder will find automatically dependent
-libraries by scanning project source files.
+Cette bibliothèque gère la communication UART et CAN avec les VESCs.
+Elle permet de lire la télémétrie du contrôleur moteur et d'envoyer les ordres depuis le code.
 
-More information about PlatformIO Library Dependency Finder
-- https://docs.platformio.org/page/librarymanager/ldf.html
+Par rapport à la bibliothèque publiée sur PlatformIO, cette version locale contient des fonctions modifiées ou ajoutées, notamment :
+- la prise en charge de commandes avec identifiant CAN
+- la possibilité d'avoir la position du moteur
+- la correction de quelques bugs
+
+## Architecture générale
+
+Le code principal reste dans `Controle/src/`.
+Les bibliothèques du dossier `lib/` sont utilisées par ce code pour séparer les responsabilités :
+- gestion du système de fichiers local avec LittleFS
+- communication série avec le VESC
+
+Cette séparation permet de garder `src/` centré sur la logique applicative du projet, tandis que `lib/` concentre les dépendances techniques réutilisables.
